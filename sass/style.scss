@@ -1,0 +1,70 @@
+/*
+	Theme Name: HTML5 Blank
+	Theme URI: http://html5blank.com
+	Description: HTML5 Blank WordPress Theme
+	Version: 1.4.3
+	Author: Todd Motto (@toddmotto)
+	Author URI: http://toddmotto.com
+	Tags: Blank, HTML5, CSS3
+
+	License: MIT
+	License URI: http://opensource.org/licenses/mit-license.php
+*/
+
+@import "compass";
+@import "compass/reset";
+
+// Let's import some partials
+@import "_partials/mixins";
+@import "_partials/variables";
+@import "_partials/typography";
+
+// To get going
+// $ cd /yourproject
+// $ compass watch
+
+// TOOLS ///////////////////////////////////////////////////////////////////////////
+
+.lb-align-right {
+	text-align: right;
+}
+
+.lb-align-center {
+	text-align: center;
+}
+
+.lb-align-vertical {
+	vertical-align: middle;
+	height: auto;
+	position: relative;
+  	top: 50%;
+  	transform: translateY(-50%);
+}
+
+.lb-padding {
+	@for $i from 1 through 15 {
+        &-top-#{$i} {
+        	padding-top: $i * 10px;
+        }
+    }
+	@for $i from 1 through 15 {
+        &-bottom-#{$i} {
+        	padding-bottom: $i * 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+	.lb-padding {
+		@for $i from 1 through 15 {
+			&-top-#{$i} {
+				padding-top: $i * 5px;
+			}
+		}
+		@for $i from 1 through 15 {
+			&-bottom-#{$i} {
+				padding-bottom: $i * 5px;
+			}
+		}
+	}
+}
